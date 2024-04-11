@@ -1,11 +1,23 @@
 import { useState } from "react";
 import QUESTIONS from "../questions.js";
 import { shuffleArray } from "../utils.js";
+import quizCompleteImg from "../assets/quiz-complete.png";
 
 const Quiz = () => {
   const [userAnswers, setUserAnswers] = useState([]);
 
   const currentQuestionIndex = userAnswers.length;
+  const quizIsComplete = QUESTIONS.length === currentQuestionIndex;
+
+  if (quizIsComplete) {
+    return (
+      <div id="summary">
+        <img src={quizCompleteImg} alt="Quiz complete" />
+        <h2>Quiz completed!</h2>
+      </div>
+    );
+  }
+
   const question = QUESTIONS[currentQuestionIndex];
   let shuffledAnswers = [...question.answers];
   shuffleArray(shuffledAnswers);
