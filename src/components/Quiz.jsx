@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import QUESTIONS from "../questions.js";
 import { shuffleArray } from "../utils.js";
 import quizCompleteImg from "../assets/quiz-complete.png";
@@ -42,10 +42,7 @@ const Quiz = () => {
           timeout="5000"
           onTimeout={handleSkipAnswer}
         />
-        <h2>
-          {question.text}
-          {question.id}
-        </h2>
+        <h2>{question.text}</h2>
         <ul id="answers">
           {shuffledAnswers.map((answer) => (
             <li key={answer} className="answer">
