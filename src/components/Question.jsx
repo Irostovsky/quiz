@@ -51,9 +51,7 @@ const Question = ({ currentQuestionId, onSkipAnswer, onSelectAnswer }) => {
         onTimeout={answer.selectedAnswer === "" ? onSkipAnswer : null}
         mode={answerState}
       />
-      <h2>
-        {question.text} - {question.id}
-      </h2>
+      <h2>{question.text}</h2>
       <Answers
         answers={question.answers}
         selectedAnswer={answer.selectedAnswer}
