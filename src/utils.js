@@ -7,6 +7,4 @@ const shuffleArray = (array) => {
   }
 };
 
-const displayPercent = (percent) => `${(percent * 100).toFixed(0)}%`;
-
-export { shuffleArray, displayPercent };
+export { shuffleArray };
